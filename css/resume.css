@@ -1,18 +1,76 @@
 *{
+	font-family: 'Microsoft YaHei','bold','arial';
 	margin: 0px;
 	padding: 0px;
 }
 
-#page1{
-	background-color: #4169E1;
+.page{
 	width: 100%;
 	height: 100%;
 }
 
+#page1{
+	background-color: #4169E1;
+}
+
 #page2{
 	background-color: #ff0;
-	width: 100%;
-	height: 100%;
+}
+
+#page3{
+	background-color: #4169E1;
+}
+
+#page4{
+	background-color: #ff0;
+}
+
+#page5{
+	background-color: #4169E1;
+}
+
+#page6{
+	background-color: #ff0;
+}
+
+#page7{
+	background-color: #4169E1;
+}
+
+@keyframes myfirst
+{
+0%   {border-color: red}
+25%  {border-color: yellow}
+50%  {border-color: blue}
+75%  {border-color: green}
+100% {border-color: red}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+0%   {border-color: red}
+25%  {border-color: yellow}
+50%  {border-color: blue}
+75%  {border-color: green}
+100% {border-color: red}
+}
+
+@-webkit-keyframes myfirst /* Safari 和 Chrome */
+{
+0%   {border-color: red}
+25%  {border-color: yellow}
+50%  {border-color: blue}
+75%  {border-color: green}
+100% {border-color: red}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+0%   {border-color: red}
+25%  {border-color: yellow}
+50%  {border-color: blue}
+75%  {border-color: green}
+100% {border-color: red}
 }
 
 #whoami{
@@ -23,18 +81,39 @@
 }
 
 #myavatar{
+animation: myfirst 5s linear 2s infinite alternate;
+/* Firefox: */
+-moz-animation: myfirst 5s linear 2s infinite alternate;
+/* Safari 和 Chrome: */
+-webkit-animation: myfirst 5s linear 2s infinite alternate;
+/* Opera: */
+-o-animation: myfirst 5s linear 2s infinite alternate;
+
 	margin: 0 auto;
 	height: 200px;
-	width: 200px;
 	background-color: #fff;
 	content: url('../resource/avatar.jpg');
-	border-radius: 100px;
+	border-radius: calc(100% / 2);
 	border: 10px solid #00BFFF;
 }
 
-#myname{
-	height: 80px;
+
+
+
+
+
+
+#myinfo{
 	text-align: center;
-	font-size: 40px;
 	color: #fff;
+}
+
+#myname{
+	margin: 20px 0px;
+	font-size: 45px;
+}
+
+.briefinfo{
+	margin: 15px 0px;
+	font-size: 14px;
 }
