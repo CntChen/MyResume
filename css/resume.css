@@ -4,6 +4,10 @@
 	padding: 0px;
 }
 
+html,body{
+	/*overflow: hidden;*/
+}
+
 .page{
 	width: 100%;
 	height: 100%;
@@ -37,41 +41,6 @@
 	background-color: #4169E1;
 }
 
-@keyframes myfirst
-{
-0%   {border-color: red}
-25%  {border-color: yellow}
-50%  {border-color: blue}
-75%  {border-color: green}
-100% {border-color: red}
-}
-
-@-moz-keyframes myfirst /* Firefox */
-{
-0%   {border-color: red}
-25%  {border-color: yellow}
-50%  {border-color: blue}
-75%  {border-color: green}
-100% {border-color: red}
-}
-
-@-webkit-keyframes myfirst /* Safari 和 Chrome */
-{
-0%   {border-color: red}
-25%  {border-color: yellow}
-50%  {border-color: blue}
-75%  {border-color: green}
-100% {border-color: red}
-}
-
-@-o-keyframes myfirst /* Opera */
-{
-0%   {border-color: red}
-25%  {border-color: yellow}
-50%  {border-color: blue}
-75%  {border-color: green}
-100% {border-color: red}
-}
 
 #whoami{
 	margin: 0 auto;
@@ -81,14 +50,6 @@
 }
 
 #myavatar{
-animation: myfirst 5s linear 2s infinite alternate;
-/* Firefox: */
--moz-animation: myfirst 5s linear 2s infinite alternate;
-/* Safari 和 Chrome: */
--webkit-animation: myfirst 5s linear 2s infinite alternate;
-/* Opera: */
--o-animation: myfirst 5s linear 2s infinite alternate;
-
 	margin: 0 auto;
 	height: 200px;
 	background-color: #fff;
@@ -96,12 +57,6 @@ animation: myfirst 5s linear 2s infinite alternate;
 	border-radius: calc(100% / 2);
 	border: 10px solid #00BFFF;
 }
-
-
-
-
-
-
 
 #myinfo{
 	text-align: center;
@@ -114,6 +69,7 @@ animation: myfirst 5s linear 2s infinite alternate;
 }
 
 .briefinfo{
+	/*visibility: hidden;*/
 	margin: 15px 0px;
 	font-size: 14px;
 }
