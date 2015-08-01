@@ -5,7 +5,7 @@
 }
 
 html,body{
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 
 .page{
@@ -44,7 +44,7 @@ html,body{
 
 #whoami{
 	margin: 0 auto;
-	margin-top: 150px;
+	padding-top: 150px;
 	width: 220px;
 	background-color: #4169E1;
 }
@@ -53,8 +53,8 @@ html,body{
 	margin: 0 auto;
 	height: 200px;
 	background-color: #fff;
-	content: url('../resource/avatar.jpg');
-	border-radius: calc(100% / 2);
+	background-image: url('../resource/avatar.jpg');
+	border-radius: 50%;
 	border: 10px solid #00BFFF;
 }
 
