@@ -6,19 +6,15 @@
 // 	Util.addClass(briefinfos[1], 'a-sildeup a-duration1s');
 // }, 500);
 
+var href = window.location.href;
+window.location.href = href.match(/#page1$/)? href : href + '#page1';
 
-// var page1 = document.getElementById('page1');
-// Util.addEvent(document, 'mousewheel', handler, false);
 
-function handler(event) {
+Util.addEvent(document, 'mousewheel', slidePageHandler, false);
+
+function slidePageHandler(event) {
 	event = event || window.event;
-	// console.log(event);
-	// if (window.event) {
-	// 	event.cancelBubble = true;
-	// } else {
-	// 	event.preventDefault();
-	// 	event.stopPropagation();
-	// }
+
 	var pageMax = Util.getElementsByClassName('page').length;
 	var href = window.location.href;
 	var pageNow = parseInt(href.replace(/^.*#page/, ''));
