@@ -41,6 +41,8 @@ var MyResume = MyResume || {};
 
 function addGlobalEvents(){
   Util.addEvent(document.getElementById('arrowdown'), 'click', pageDown, false);
+  Util.addEvent(document.getElementById('arrowup'), 'click', pageUp, false);
+
   Util.addEvent(document, 'mousewheel', slidePageHandler, false);
 }
 
