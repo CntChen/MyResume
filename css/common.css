@@ -1,0 +1,13 @@
+.common-button{
+	font-size: 18px;
+	border: 2px #aaa solid;
+	padding: 5px 15px;
+	border-radius: 4px;
+	cursor: pointer;
+	background-color: rgba(255,255,255,0.6);
+	text-decoration: none;
+}
+
+.common-button:hover{
+	background-color: rgba(255,255,255,0.9);
+}
