@@ -44,10 +44,11 @@ function addGlobalEvents(){
 
 function slidePageHandler(event) {
   event = event || window.event;
-  if (event.wheelDeltaY < 0) {
+  console.log("wheel", event);
+  if (event.wheelDeltaY < 0 || event.wheelDelta < 0) {
     pageDown();
   }
-  if (event.wheelDeltaY > 0) {
+  if (event.wheelDeltaY > 0 || event.wheelDelta > 0) {
     pageUp();
   }
 }
