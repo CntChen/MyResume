@@ -2,39 +2,45 @@ var MyResume = MyResume || {};
 
 (function (){
   var self = self || {};
-  self.pageNow = 1;
+  self.pageMax = 0;
+  self.pagesDom = [];
+  self.pagesDefaultInnerHTML = [];
 
   function initMyResume(){
+  	// init hash
+    var hash = window.location.hash;
+    hash =hash.match(/^#page\d+$/gi) ? hash : '#page1';
+    window.location.hash = hash;
 
+    self.pagesDom =  Util.getElementsByClassName('page');
+    self.pageMax = self.pagesDom.length;
+
+    for (var i = 0; i < self.pageMax; i++) {
+    	self.pagesDefaultInnerHTML[i] = self.pagesDom[i].innerHTML;
+    };
+
+  	addGlobalEvents();
+
+  	// start view resume page
+  	viewResumePage();
   }
 
   function getPageNow(){
-
+    return parseInt(window.location.hash.replace(/^#page/, ''));
   }
 
-  function startViewMyResume() {
-    var href = window.location.href;
-    window.location.href = href.match(/#page\d+$/) ? href : href + '#page1';
-    var pageNow = parseInt(href.replace(/^.*#page/, ''));
-    eval('try{startViewPage' + pageNow +'();}catch(e){}');
+  function viewResumePage() {
+    var pageNow = getPageNow();
+    // set default innerHTML
+  	self.pagesDom[pageNow-1].innerHTML = self.pagesDefaultInnerHTML[pageNow-1]; 
+  	// init page with animation
+    eval('try{initPage' + pageNow +'();}catch(e){}');
   }
 
-  function startViewPage1() {
-    var briefinfos = Util.getElementsByClassName('briefinfo');
-    Util.removeClass(briefinfos[0], 'hidden');
-    Util.addClass(briefinfos[0], 'a-sildeup a-duration1s');
-    setTimeout(function() {
-      Util.removeClass(briefinfos[1], 'hidden');
-      Util.addClass(briefinfos[1], 'a-sildeup a-duration1s');
-    }, 500);
-  }
-
-function addAllEvents(){
-  var arrowDown = document.getElementById('arrowdown');
-  Util.addEvent(arrowDown, 'click', pageDown, false);
+function addGlobalEvents(){
+  Util.addEvent(document.getElementById('arrowdown'), 'click', pageDown, false);
   Util.addEvent(document, 'mousewheel', slidePageHandler, false);
 }
-
 
 function slidePageHandler(event) {
   event = event || window.event;
@@ -47,31 +53,42 @@ function slidePageHandler(event) {
 }
 
 function pageDown() {
-  var pageMax = Util.getElementsByClassName('page').length;
-  var href = window.location.href;
-  var pageNow = parseInt(href.replace(/^.*#page/, ''));
-  if (pageNow < pageMax) {
-    window.location.href = href.replace(pageNow, ++pageNow);
-  }
+	gotoPage(getPageNow() + 1);
 }
 
 function pageUp() {
-  var pageMax = Util.getElementsByClassName('page').length;
-  var href = window.location.href;
-  var pageNow = parseInt(href.replace(/^.*#page/, ''));
-  if (pageNow > 1) {
-    window.location.href = href.replace(pageNow, --pageNow);
-  }
+	gotoPage(getPageNow() - 1);
 }
 
+function gotoPage(pageIndex){
+	if(pageIndex < 1 || pageIndex > self.pageMax){
+		return;
+	}
+
+	// go
+  	var pageNow = getPageNow();
+    window.location.hash = window.location.hash.replace(pageNow, pageIndex);
+
+	viewResumePage();
+}
+
+  function initPage1() {
+    var briefinfos = Util.getElementsByClassName('briefinfo');
+    Util.removeClass(briefinfos[0], 'hidden');
+    Util.addClass(briefinfos[0], 'a-sildeup a-duration1s');
+    setTimeout(function() {
+      Util.removeClass(briefinfos[1], 'hidden');
+      Util.addClass(briefinfos[1], 'a-sildeup a-duration1s');
+    }, 800);
+  }
+
   MyResume = {
-  startViewMyResume:startViewMyResume
+  	initMyResume: initMyResume
   };
 })(); 
 
 
-
-MyResume.startViewMyResume();
+MyResume.initMyResume();
 
 
 
