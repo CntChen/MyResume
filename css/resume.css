@@ -10,6 +10,18 @@ html,body{
 	overflow: hidden;
 }
 
+h1{
+	font-size: 45px;
+	color: #fff;
+}
+
+h2{
+	font-size: 30px;
+	color: #f00;
+}
+
+
+
 .hidden{
 	visibility: hidden;
 }
@@ -21,13 +33,14 @@ html,body{
 #contain{
 	position: absolute;
 	width: 100%;
-	overflow: hidden;
 	height: 100%;
+	overflow: hidden;
 }
 
 .page{
 	width: 100%;
 	height: 100%;
+	text-align: center;
 }
 
 .footer{
@@ -63,31 +76,6 @@ html,body{
 	background-color: #4169E1;
 }
 
-#page2{
-	background-color: #ff0;
-}
-
-#page3{
-	background-color: #4169E1;
-}
-
-#page4{
-	background-color: #ff0;
-}
-
-#page5{
-	background-color: #4169E1;
-}
-
-#page6{
-	background-color: #ff0;
-}
-
-#page7{
-	background-color: #4169E1;
-}
-
-
 #whoami{
 	margin: 0 auto;
 	padding-top: 150px;
@@ -111,7 +99,6 @@ html,body{
 
 #myname{
 	margin: 20px 0px;
-	font-size: 45px;
 }
 
 .briefinfo{
@@ -119,3 +106,70 @@ html,body{
 	margin: 15px 0px;
 	font-size: 14px;
 }
+
+
+#page2{
+	background-color: #0f0;
+}
+
+
+#myeducation{
+	text-align: center;
+}
+
+#page3{
+	background-color: #4169E1;
+}
+
+#page4{
+	background-color: #ff0;
+}
+
+#page5{
+	background-color: #4169E1;
+}
+
+#page6{
+	background-color: #ff0;
+}
+
+#page7{
+	background-color: #4169E1;
+}
+
+.pagecontent{
+width: 100%;
+height: 100%;
+padding-top: 100px;
+}
+
+.myproject{
+	margin: 20px 20px;
+	display: inline-block;
+	width: 256px;
+	height: 300px;
+	background-color: #fff;
+	text-align: left;
+}
+
+.projecttitle{
+	font-size: 20px;
+	padding: 5px 10px;
+	height: 30px;
+}
+
+.projecttime{
+	font-size: 20px;
+	color: #aee2d9;
+	padding: 5px 10px;
+	height: 50px;
+}
+
+.projectinfo{
+	font-size: 15px;
+	padding: 5px 10px;
+	height: 300px;
+}
+
+
+

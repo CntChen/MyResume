@@ -7,6 +7,8 @@ var MyResume = MyResume || {};
   self.pagesDefaultInnerHTML = [];
 
   function initMyResume(){
+  	console.log('%cWelcome, just contact me.', 'color:#00f;font-size:20px;');
+
   	// init hash
     var hash = window.location.hash;
     hash =hash.match(/^#page\d+$/gi) ? hash : '#page1';
@@ -43,8 +45,8 @@ function addGlobalEvents(){
 }
 
 function slidePageHandler(event) {
+	console.log('event');
   event = event || window.event;
-  console.log("wheel", event);
   if (event.wheelDeltaY < 0 || event.wheelDelta < 0) {
     pageDown();
   }
