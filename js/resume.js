@@ -78,12 +78,15 @@ function gotoPage(pageIndex){
 }
 
   function initPage1() {
-    var briefinfos = Util.getElementsByClassName('briefinfo');
-    Util.removeClass(briefinfos[0], 'hidden');
-    Util.addClass(briefinfos[0], 'a-sildeup a-duration1s');
+    var mySign = document.getElementById('mysign');
+    var myEmail = document.getElementById('myemail');
+
+    console.log("eeee");
+    Util.removeClass(mySign, 'hidden');
+    Util.addClass(mySign, 'visible a-sildeup a-duration1s');
     setTimeout(function() {
-      Util.removeClass(briefinfos[1], 'hidden');
-      Util.addClass(briefinfos[1], 'a-sildeup a-duration1s');
+      Util.removeClass(myEmail, 'hidden');
+      Util.addClass(myEmail, 'visible a-sildeup a-duration1s');
     }, 800);
   }
 
