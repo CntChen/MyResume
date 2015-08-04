@@ -1,0 +1,87 @@
+#header {
+  color: #6c94be;
+}
+.div {
+  font-width: 20px;
+  content: "I am fnord.";
+}
+#menu a {
+  color: red;
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+#menu a.float {
+  float: left;
+}
+#menu a .top {
+  margin: 5px;
+}
+#myheader {
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+#myfooter {
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+#mycontent {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+#mybox {
+  box-shardow: 2px 5px 1px #000000;
+  -moz-box-shardow: 2px 5px 1px #000000;
+  -webkit-box-shardow: 2px 5px 1px #000000;
+}
+.class {
+  color: #a2a2a2;
+  display: block;
+}
+.class1 {
+  background-color: black;
+  color: #dddddd;
+}
+.class2 {
+  color: #555555;
+}
+#myheader2 {
+  color: black;
+}
+#myheader2 .navigation {
+  font-size: 12px;
+}
+#myheader2 .logo {
+  width: 300px;
+}
+#myheader2 .logo:hover {
+  text-decoration: none;
+}
+.bordered.float {
+  float: left;
+}
+.bordered .top {
+  margin: 5px;
+}
+.common-btn {
+  font-size: 15px;
+}
+.common-link {
+  font-size: 12px;
+}
+.common .btn {
+  font-size: 10px;
+}
+.mycommon-btn {
+  font-size: 15px;
+}
+.mycommon-link {
+  font-size: 12px;
+}
+.mycommon .btn {
+  font-size: 10px;
+}
+[0x74D651F0] ANOMALY: meaningless REX prefix used
+[0x74D65770] ANOMALY: meaningless REX prefix used

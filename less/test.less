@@ -1,0 +1,154 @@
+@nice-blue: #5b83ad;
+@light-blue: @nice-blue + #111;
+
+#header {
+	color:@light-blue;
+}
+
+@fnord: "I am fnord.";
+@var: "fnord";
+
+.div {
+	font-width: 20px;
+	content: @@var;
+}
+
+.bordered () {
+	border-top: dotted 1px black;
+	border-bottom: solid 2px black;
+}
+
+#menu a {
+	color: red;
+	.bordered;
+}
+
+.border-radius (@radius: 10px) {
+	border-radius: @radius;
+	-moz-border-radius: @radius;
+	-webkit-border-radius: @radius;
+}
+
+#myheader {
+	.border-radius(4px);
+}
+
+#myfooter {
+	.border-radius(6px);
+}
+
+#mycontent {
+	.border-radius();
+}
+
+.box-shadow (@x: 1, @y: 1, @blur: 1px, @color: #000) {
+	box-shardow: @arguments;
+	-moz-box-shardow: @arguments;
+	-webkit-box-shardow: @arguments;	
+}
+
+#mybox {
+	.box-shadow (2px, 5px);
+}
+
+
+.mixin (dark, @color) {
+	color: darken(@color, 10%);
+}
+
+.mixin (light, @color) {
+	color: lighten(@color, 10%);
+}
+
+.mixin (@_, @color){
+	display: block;
+}
+
+@switch: light;
+
+.class {
+	.mixin(@switch, #888888);
+}
+
+.mixincolor (@a) when (lightness(@a) >= 50%) and (iscolor(@a)) {
+	background-color: black;
+}
+
+.mixincolor (@a) when (lightness(@a) <= 50%) and (isnumber(@a)) {
+	background-color: white;
+}
+
+.mixincolor (@a){
+	color: @a;
+}
+
+.class1 {
+	.mixincolor(#ddd);
+}
+
+.class2 {
+	.mixincolor(#555);
+}
+
+#myheader2 {
+	color: black;
+
+	.navigation {
+		font-size: 12px;
+	}
+
+	.logo {
+		width: 300px;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.bordered {
+  &.float {
+    float: left; 
+  }
+  .top {
+    margin: 5px; 
+  }
+}
+
+.common {
+	&-btn{
+		font-size: 15px;
+	}
+
+	&-link{
+		font-size: 12px;
+	}
+
+	.btn {
+		font-size: 10px;
+	}
+}
+
+.mycommon {
+	.common;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
