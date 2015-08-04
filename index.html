@@ -9,8 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="./css/resume.css" />
 </head>
 <body>
-	<div id="contain">
-		<div id="page1" class="page">
+	<div id="maincontain">
+		<div id="page1" class="page page_introduction">
 			<div class="pagecontent">
 				<div id="myavatar"></div>
 				<div id="myinfo">
@@ -22,7 +22,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="page2" class="page">
+		<div id="page2" class="page page_education">
 			<div class="pagecontent">
 				<div id="myeducation">
 					<h1 id="myname">教育背景</h1>
@@ -33,107 +33,144 @@
 				</div>
 			</div>
 		</div>
-		<div id="page3" class="page">
+		<div id="page3" class="page page_ability">
 			<div class="pagecontent">
 				<h1>专业技能</h1>
 			</div>
 		</div>
-		<div id="page4" class="page">
+		<div id="page4" class="page page_project">
 			<div class="pagecontent">
-				<h1>实习经历</h1>
+				<h1>项目经历</h1>
 				<div class="myproject">
-					<div class="projecttitle">
-						<p>华为--前端工程师</p>
+					<div class="myprojecttitle">
+						<h3>中山大学党员学习网站</h3>
 					</div>
-					<div class="projecttime">
+					<div class="myprojecttime">
 						<p>2015.07 ~ 2015.09</p>
 					</div>
-					<div class="projectinfo">
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;参与大数据项目前端页面开发.</p>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;实现国际化、基于Chart.js的数据图形化</p>
+					<div class="myprojectinfo">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;内容管理系统网站，网站建设负责人，对5名大一新生从零进行HTML\JS\PS培训，然后协助该项目开发。基于开源CMS建站，设计页面风格和党员管理系统，并开发在线时间统计模块。编写后台操作文档。</p>
 					</div>
 				</div>
 				<div class="myproject">
-					<div class="projecttitle">
-						<p>阿里UC--Web工程师</p>
+					<div class="myprojecttitle">
+						<h3>本专业课程交流网站</h3>
 					</div>
-					<div class="projecttime">
+					<div class="myprojecttime">
 						<p>2015.05 ~ 2015.07</p>
 					</div>
-					<div class="projectinfo">
+					<div class="myprojectinfo">
 						<p>&nbsp;&nbsp;&nbsp;&nbsp;基于Node.js视频爬虫开发。</p>
 						<p>&nbsp;&nbsp;&nbsp;&nbsp;个人工作：分析各个视频网站的前端页面结构和模板，通过网络请求、HTML标签匹配、正则过滤等，实现各网站的频数据的属性获取和存储。</p>
 					</div>
 				</div>
 				<div class="myproject">
-					<div class="projecttitle">
-						<p>三之乐--App工程师</p>
+					<div class="myprojecttitle">
+						<h3>高德地图网络数据分析</h3>
 					</div>
-					<div class="projecttime">
+					<div class="myprojecttime">
 						<p>2012.09 ~ 2013.03</p>
 					</div>
-					<div class="projectinfo">
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;完成“手机遥控玩具车”iOS版开发，包括二维码识别、网络通讯和Cocos-2D动画。</p>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;“手机电脑鼠标”，使用手机重力感应操控电脑玩“极品飞车”，实现子网内手机与电脑通过UDP广播的自动连接。</p>
+					<div class="myprojectinfo">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;基于地图JS API,抓取并分析高德网页地图的各种网络数据请求形式，通过网络编程高效遍历拉取高德地图上的瓦片、建筑物、兴趣点和道路等数据。开发3DGIS地图网站，呈现切片底图并绘制3D建筑物。</p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="page5" class="page">
+		<div id="page5" class="page page_project">
+			<div class="pagecontent">
+				<h1>项目经历</h1>
+				<div class="myproject">
+					<div class="myprojecttitle">
+						<h3>三维模型绘制软件</h3>
+					</div>
+					<div class="myprojecttime">
+						<p>2015.07 ~ 2015.09</p>
+					</div>
+					<div class="myprojectinfo">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;基于WPF3D的三维模型绘制软件，实现鼠标构建物体及墙壁、物体边角变圆角、物体表面纹理贴图、光照阴影生成等，涉及鼠标逻辑控制、几何变换计算。</p>
+					</div>
+				</div>
+				<div class="myproject">
+					<div class="myprojecttitle">
+						<h3>本专业课程交流网站</h3>
+					</div>
+					<div class="myprojecttime">
+						<p>2015.05 ~ 2015.07</p>
+					</div>
+					<div class="myprojectinfo">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;基于Node.js视频爬虫开发。</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;个人工作：分析各个视频网站的前端页面结构和模板，通过网络请求、HTML标签匹配、正则过滤等，实现各网站的频数据的属性获取和存储。</p>
+					</div>
+				</div>
+				<div class="myproject">
+					<div class="myprojecttitle">
+						<h3>高德地图网络数据分析</h3>
+					</div>
+					<div class="myprojecttime">
+						<p>2012.09 ~ 2013.03</p>
+					</div>
+					<div class="myprojectinfo">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;基于地图JS API,抓取并分析高德网页地图的各种网络数据请求形式，通过网络编程高效遍历拉取高德地图上的瓦片、建筑物、兴趣点和道路等数据。开发3DGIS地图网站，呈现切片底图并绘制3D建筑物。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="page6" class="page page_internship">
 			<div class="pagecontent">
 				<h1>实习经历</h1>
 								<div class="myproject">
-					<div class="projecttitle">
+					<div class="myprojecttitle">
 						<h3>阿里UC--Web工程师</h3>
 					</div>
-					<div class="projecttime">
+					<div class="myprojecttime">
 						<p>2015.05 ~ 2015.07</p>
 					</div>
-					<div class="projectinfo">
+					<div class="myprojectinfo">
 						<p>&nbsp;&nbsp;&nbsp;&nbsp;基于Node.js的视频网站爬虫开发。</p>
 						<p>&nbsp;&nbsp;&nbsp;&nbsp;分析各视频网站的前端页面结构和模板，通过路由匹配、HTML标签匹配、正则过滤等，实现各网站的频数据的属性获取和存储。开发网址后缀匹配模块。</p>
 					</div>
 				</div>
 				<div class="myproject">
-					<div class="projecttitle">
+					<div class="myprojecttitle">
 						<h3>华为--前端工程师</h3>
 					</div>
-					<div class="projecttime">
+					<div class="myprojecttime">
 						<p>2015.07 ~ 2015.09</p>
 					</div>
-					<div class="projectinfo">
+					<div class="myprojectinfo">
 						<p>&nbsp;&nbsp;&nbsp;&nbsp;参与大数据项目前端页面开发。</p>
 						<p>&nbsp;&nbsp;&nbsp;&nbsp;实现页面语言切换、基于Chart.js的数据图形化、时间选择器插件、页面弹出框管理插件、下拉列表控制插件。基于React的复杂页面刷新。</p>
 					</div>
 				</div>
 				<div class="myproject">
-					<div class="projecttitle">
+					<div class="myprojecttitle">
 						<h3>三之乐--App工程师</h3>
 					</div>
-					<div class="projecttime">
+					<div class="myprojecttime">
 						<p>2012.09 ~ 2013.03</p>
 					</div>
-					<div class="projectinfo">
+					<div class="myprojectinfo">
 						<p>&nbsp;&nbsp;&nbsp;&nbsp;Android手机电脑鼠标App和iOS玩具车遥控App开发</p>
 						<p>&nbsp;&nbsp;&nbsp;&nbsp;使用Android手机重力感应操控电脑玩“极品飞车”，实现手机与电脑通过UDP广播自动连接。开发iphone遥控实体玩具车App，包括二维码识别、网络通讯和Cocos-2D动画。</p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="page6" class="page">
+		<div id="page7" class="page page_application">
 			<div class="pagecontent">
 				<h1>心仪职位</h1>
 				<div id="careertarget">
 				<h2 id="careerposition">前端工程师</h2>
-				<h3 id="careercity">工作地点：<strong>深圳</strong> / <strong>广州</strong></h3>
+				<h3 id="careercity">工作地点：<strong>深圳</strong> or <strong>广州</strong></h3>
 				<h3 id="careerindustry">行业：互联网</h3>
 				</div>
 			</div>
 		</div>
-		<div id="page7" class="page">
+		<div id="page8" class="page page_contact">
 			<div class="pagecontent">
 				<h1>了解更多</h1>
-				<p><a class="common-button" href="./resource/avatar.jpg" target="_blank">查看标准简历</a></p>
+				<div id="viewstandardresume"><a class="common-button" href="./resource/avatar.jpg" target="_blank">查看标准简历</a></div>
 				<h2>或通过以下方式联系到我</h2>
 				<p>Email:&nbsp;<a href="mailto:cuntiechen@163.com" target="_blank">cuntiechen@163.com</a></p>
 				<p>Tel:&nbsp;<a href="tel:15018752568" target="_blank">15018752568</a></p>
@@ -145,7 +182,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="footer">
+	<div id="footer">
 		<div id="arrowup"></div>
 		<div id="arrowdown"></div>
 	</div>
