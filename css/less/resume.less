@@ -15,11 +15,14 @@
 
 	&_introduction {
 		background-color: #4169E1;
+		h3 {
+			font-size: 15px;
+		}
 	}
 	&_education {
 		background-color: #0f0;
 	}
-	&_ability {
+	&_skill{
 		background-color: #4169E1;
 	}
 	&_project {
@@ -49,6 +52,7 @@
 		}
 		p {
 			margin: 20px 0px;
+			color: #fff;
 		}
 	}
 }
@@ -137,6 +141,35 @@
 	text-align: center;
 }
 
+#skilltree{
+	margin: 20px 0px;
+}
+
+.skillbranch{
+	padding: 8px 0px;
+}
+
+.skillnode{
+	font-size: 15px;
+	color: #fff;
+	display: inline-block;
+	margin: 0px 5px;
+	padding: 1px 5px;
+	border-radius: 4px;
+}
+
+.expert{
+	background-color: rgba(25, 255, 255, 0.6);
+}
+
+.familiar{
+	background-color: rgba(25, 255, 255, 0.4);
+}
+
+.justknow{
+	background-color: rgba(25, 255, 255, 0.2);
+}
+
 .myproject{
 	@project-width: 256px;
 	@project-height: 300px;
@@ -188,14 +221,23 @@
 }
 
 
+#careertarget{
+	margin: 50px 0px;
+}
+
 #viewstandardresume{
 	font-size: 20px;
 	margin: 30px 0px;
 }
 
+#commingsoon {
+	a {
+		color: #abc;
+		cursor: wait;
+	}
 
-#careertarget{
-	margin: 50px 0px;
+	a:hover{
+		color: #fff;
+	}
 }
-
 

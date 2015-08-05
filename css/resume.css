@@ -12,10 +12,13 @@
 .page_introduction {
   background-color: #4169E1;
 }
+.page_introduction h3 {
+  font-size: 15px;
+}
 .page_education {
   background-color: #0f0;
 }
-.page_ability {
+.page_skill {
   background-color: #4169E1;
 }
 .page_project {
@@ -46,6 +49,7 @@
 }
 .page_contact p {
   margin: 20px 0px;
+  color: #fff;
 }
 .pagecontent {
   width: 100%;
@@ -126,6 +130,29 @@
 #myeducation {
   text-align: center;
 }
+#skilltree {
+  margin: 20px 0px;
+}
+.skillbranch {
+  padding: 8px 0px;
+}
+.skillnode {
+  font-size: 15px;
+  color: #fff;
+  display: inline-block;
+  margin: 0px 5px;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.expert {
+  background-color: rgba(25, 255, 255, 0.6);
+}
+.familiar {
+  background-color: rgba(25, 255, 255, 0.4);
+}
+.justknow {
+  background-color: rgba(25, 255, 255, 0.2);
+}
 .myproject {
   margin: 20px 20px;
   display: inline-block;
@@ -170,10 +197,17 @@
   margin: 5px 0px;
   font-weight: 100;
 }
+#careertarget {
+  margin: 50px 0px;
+}
 #viewstandardresume {
   font-size: 20px;
   margin: 30px 0px;
 }
-#careertarget {
-  margin: 50px 0px;
+#commingsoon a {
+  color: #abc;
+  cursor: wait;
+}
+#commingsoon a:hover {
+  color: #fff;
 }
