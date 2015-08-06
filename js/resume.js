@@ -5,6 +5,7 @@ var MyResume = MyResume || {};
   self.pageMax = 0;
   self.pagesDom = [];
   self.pagesDefaultInnerHTML = [];
+  self.pageHash = [];
 
   function initMyResume() {
     console.log('%c Welcome, just contact me.', 'color:#00f;font-size:20px;');
@@ -19,12 +20,40 @@ var MyResume = MyResume || {};
 
     for (var i = 0; i < self.pageMax; i++) {
       self.pagesDefaultInnerHTML[i] = self.pagesDom[i].innerHTML;
+
+      var pageName = self.pagesDom[i].className.replace(/page\spage_/, '');
+      var pageId = self.pagesDom[i].id;
+      self.pageHash[pageName] = self.pageHash[pageName] || pageId;
     };
 
+    addPageNavigation();
     addGlobalEvents();
 
     // start view resume page
     viewResumePage();
+  }
+
+  function addPageNavigation() {
+    if (self.pageHash.length === 0) {
+      return;
+    }
+
+    var navItemsHTML = '';
+    for (var key in self.pageHash) {
+      navItemsHTML = navItemsHTML
+      + '<li><a>'
+      + self.pageHash[i]
+      + '</a></li>';
+    };
+    var pageNavHTML = '<div><ul>'
+    + navItemsHTML
+    + '</ul></div>';
+
+    var pageNavDiv = document.creatElement('div');
+    document.appendChild(pageNavDiv);
+
+    pageNavDiv.innerHTML = pageNavHTML;
+    
   }
 
   function getPageNow() {
@@ -46,6 +75,7 @@ var MyResume = MyResume || {};
     Util.addEvent(document.getElementById('arrowup'), 'click', pageUp, false);
 
     Util.addEvent(document, 'mousewheel', slidePageHandler, false);
+    Util.addEvent(document, 'keydown', keyPressHandler, false);
   }
 
   function slidePageHandler(event) {
@@ -54,6 +84,17 @@ var MyResume = MyResume || {};
       pageDown();
     }
     if (event.wheelDeltaY > 0 || event.wheelDelta > 0) {
+      pageUp();
+    }
+  }
+
+  function keyPressHandler(event) {
+    event = event || window.event;
+    var key = event.keyCode;
+    if (key === 40) {
+      pageDown();
+    }
+    if (key === 38) {
       pageUp();
     }
   }
