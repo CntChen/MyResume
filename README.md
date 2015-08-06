@@ -1,4 +1,4 @@
-# My Resume For a Front-end Job ##
+# My Resume For Front-end Job ##
 
 ### Please click **[MyResume][MyResume]** ###
 
