@@ -5,7 +5,7 @@ var MyResume = MyResume || {};
   self.pageMax = 0;
   self.pagesDom = [];
   self.pagesDefaultInnerHTML = [];
-  self.pagesHash = {};
+  self.pageStartIndex = {};
 
   function initMyResume() {
     console.log('%c Welcome, just contact me.', 'color:#00f;font-size:20px;');
@@ -15,69 +15,21 @@ var MyResume = MyResume || {};
     hash = hash.match(/^#page\d+$/gi) ? hash : '#page1';
     window.location.hash = hash;
 
-    self.pagesDom = Util.getElementsByClassName('page');
+    self.pagesDom = document.getElementsByClassName('page');
     self.pageMax = self.pagesDom.length;
 
     for (var i = 0; i < self.pageMax; i++) {
       self.pagesDefaultInnerHTML[i] = self.pagesDom[i].innerHTML;
 
       var pageName = self.pagesDom[i].className.replace(/page\spage_/, '');
-      var pageHash = self.pagesDom[i].id;
-      self.pagesHash[pageName] = self.pagesHash[pageName] || pageHash;
+      var pageIndex = i + 1;
+      self.pageStartIndex[pageName] = self.pageStartIndex[pageName] || pageIndex;
     };
 
-    addPageNavigation(self.pagesHash, viewResumePage);
     addGlobalEvents();
 
     // start view resume page
     viewResumePage();
-  }
-
-  function addPageNavigation(pageHash, clickCallback) {
-    if (pageHash.length === 0) {
-      return;
-    }
-
-    var navItemsHTML = '';
-    for (var key in pageHash) {
-      navItemsHTML = navItemsHTML
-      + '<li style="list-style-type:square;font-size:20px;color:white;cursor:pointer;">'
-      + '<span style="display:none;font-size:14px;color:#fff;margin:0px -10px;vertical-align:top;">'
-      + key.replace(/\b\w/g, function(str){return str.toUpperCase();})
-      + '</span>'
-      + '</li>';
-    };
-    var pageNavHTML = '<div id="pagenavigation" style="position: fixed;z-index: 1;top: 40%;left:30px;">'
-    + '<ul">'
-    + navItemsHTML
-    + '</ul>'
-    + '</div>';
-
-    var pageNavDiv = document.createElement('div');
-    document.body.appendChild(pageNavDiv);
-    pageNavDiv.outerHTML = pageNavHTML;
-
-    var li_MouseOver = function (){
-        this.style.color = 'black';
-      this.getElementsByTagName('span')[0].style.display = 'inline'
-    }
-
-    var li_MouseOut = function (){
-      if (this.style.color === 'black') {
-        this.style.color = 'white';
-      }
-      this.getElementsByTagName('span')[0].style.display = 'none'
-    }
-
-    var li_Click = function (){
-      window.location.hash = pageHash[this.getElementsByTagName('span')[0].innerHTML.toLowerCase()];
-      clickCallback();
-    }
-
-    var lis = document.getElementById('pagenavigation').getElementsByTagName('li');
-    Util.addEvent(lis, 'mouseover', li_MouseOver, false);
-    Util.addEvent(lis, 'mouseout', li_MouseOut, false);
-    Util.addEvent(lis, 'click', li_Click, false);
   }
 
   function getPageNow() {
@@ -86,12 +38,27 @@ var MyResume = MyResume || {};
 
   function viewResumePage() {
     var pageNow = getPageNow();
+
+    // update navigation
+    var lis = document.getElementById('pagenavigation').getElementsByTagName('li');
+    Util.removeClass(lis, 'selected');
+
+    var pageName = '';
+    for(var key in self.pageStartIndex){
+      console.log(self.pageStartIndex);
+      var pageIndex = self.pageStartIndex[key];
+      if (pageIndex >= pageNow) {
+        pageName = key;
+        break;
+      }
+    }
+
     // set default innerHTML
     self.pagesDom[pageNow - 1].innerHTML = self.pagesDefaultInnerHTML[pageNow - 1];
 
-    // 页面过场动画
-    Util.addClass(self.pagesDom[pageNow - 1].getElementsByClassName('pagecontent'), 'a-zoomin a-duration_5s');
-
+    // page popup animation
+    Util.addClass(self.pagesDom[pageNow - 1].getElementsByClassName('pagecontent'), 'a-zoomin a-duration1s');
+    
     // init page with animation
     var initPageFunc = 'try{initPage_' + self.pagesDom[pageNow - 1].className.replace(/page\spage_/, '').replace(/\b\w/, function(str) {
       return str.toUpperCase();
@@ -105,6 +72,9 @@ var MyResume = MyResume || {};
 
     Util.addEvent(document, 'mousewheel', slidePageHandler, false);
     Util.addEvent(document, 'keydown', keyPressHandler, false);
+
+    var lis = document.getElementById('pagenavigation').getElementsByTagName('li');
+    Util.addEvent(lis, 'click', li_ClickHandler, false);
   }
 
   function slidePageHandler(event) {
@@ -126,6 +96,11 @@ var MyResume = MyResume || {};
     if (key === 38) {
       pageUp();
     }
+  }
+
+  function li_ClickHandler() {
+    var pageIndex = self.pageStartIndex[this.getElementsByTagName('span')[0].innerHTML.toLowerCase()];    
+    gotoPage(pageIndex);  
   }
 
   function pageDown() {
@@ -158,12 +133,14 @@ var MyResume = MyResume || {};
     Util.addClass(mySign, 'hidden');
     Util.addClass(myEmail, 'hidden');
 
-    Util.removeClass(mySign, 'hidden');
-    Util.addClass(mySign, 'a-sildeup a-duration1s');
+    setTimeout(function() {
+      Util.removeClass(mySign, 'hidden');
+      Util.addClass(mySign, 'a-sildeup a-duration1s');
+    }, 1000);
     setTimeout(function() {
       Util.removeClass(myEmail, 'hidden');
       Util.addClass(myEmail, 'a-sildeup a-duration1s');
-    }, 800);
+    }, 1500);
   }
 
   function initPage_Skill(){
@@ -176,16 +153,18 @@ var MyResume = MyResume || {};
     Util.addClass(familiarSkills, 'hidden');
     Util.addClass(justknowSkills, 'hidden');
 
+    setTimeout(function() {
     Util.removeClass(expertSkills, 'hidden');
     Util.addClass(expertSkills, 'a-zoomin a-duration1s');
+    }, 1000);
     setTimeout(function() {
       Util.removeClass(familiarSkills, 'hidden');
       Util.addClass(familiarSkills, 'a-zoomin a-duration1s');
-    }, 600);
+    }, 1600);
     setTimeout(function() {
       Util.removeClass(justknowSkills, 'hidden');
       Util.addClass(justknowSkills, 'a-zoomin a-duration1s');
-    }, 1200);
+    }, 2200);
   }
 
   function initPage_Internship() {
@@ -194,15 +173,16 @@ var MyResume = MyResume || {};
 
     Util.addClass(myProject, 'hidden');
 
-    Util.removeClass(myProject[0], 'hidden');
-    Util.addClass(myProject[0], 'a-sildeup a-duration1s');
-
+    setTimeout(function() {
+      Util.removeClass(myProject[0], 'hidden');
+      Util.addClass(myProject[0], 'a-sildeup a-duration1s');
+    }, 1000);
     for (var i = 1; i < myProject.length; i++) {
       (function(i) {
         setTimeout(function() {
           Util.removeClass(myProject[i], 'hidden');
           Util.addClass(myProject[i], 'a-sildeup a-duration1s');
-        }, 800 * i);
+        }, 1000 + 800 * i);
       })(i);
     }
   }
