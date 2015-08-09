@@ -45,13 +45,13 @@ var MyResume = MyResume || {};
 
     var pageName = '';
     for(var key in self.pageStartIndex){
-      console.log(self.pageStartIndex);
       var pageIndex = self.pageStartIndex[key];
       if (pageIndex >= pageNow) {
         pageName = key;
         break;
       }
     }
+    Util.addClass(document.getElementById('li-' + pageName), 'selected');
 
     // set default innerHTML
     self.pagesDom[pageNow - 1].innerHTML = self.pagesDefaultInnerHTML[pageNow - 1];
