@@ -5,8 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>CntChen Resume</title>
 	<link rel="stylesheet" type="text/css" href="./css/common.css" />
-	<link rel="stylesheet" type="text/css" href="./css/myanimate.css" />
-	<link rel="stylesheet" type="text/css" href="./css/resume.css" />
+	<link rel="stylesheet" type="text/css" href="./css/myanimation.css" />
+	<link rel="stylesheet" type="text/css" href="./css/myresume.css" />
 </head>
 <body>
 	<div id="maincontain">
@@ -15,8 +15,8 @@
 				<div id="myavatar"></div>
 				<div id="myinfo">
 					<h1 id="myname">陈韩杰</h1>
-					<h3 id="mysign" class="hidden">成长中的网页前端工程师</h3>
-					<h3 id="myemail" class="hidden">
+					<h3 id="mysign">成长中的网页前端工程师</h3>
+					<h3 id="myemail">
 						<a href="mailto:cuntiechen@163.com" target="_blank">cuntiechen@163.com</a>
 					</h3>
 				</div>
@@ -50,12 +50,12 @@
 					<div class="skillbranch">
 						<div class="skillnode expert">HTML5</div>
 						<div class="skillnode familiar">Android</div>
-						<div class="skillnode familiar">OpenGL</div>
+						<div class="skillnode justknow">OpenGL</div>
 					</div>
 					<div class="skillbranch">
 						<div class="skillnode familiar">网页设计</div>
 						<div class="skillnode expert">图形化</div>
-						<div class="skillnode familiar">软硬件交互</div>
+						<div class="skillnode familiar">Git</div>
 					</div>
 					<div class="skillbranch">
 						<div class="skillnode justknow">C#</div>
@@ -66,7 +66,7 @@
 		</div>
 		<div id="page4" class="page page_project">
 			<div class="pagecontent">
-				<h1>项目经历</h1>
+				<h1>项目经历 一</h1>
 				<div class="myproject">
 					<div class="myprojecttitle">
 						<h3>中山大学党员学习网站</h3>
@@ -83,11 +83,10 @@
 						<h3>本专业课程交流网站</h3>
 					</div>
 					<div class="myprojecttime">
-						<p>2015.05 ~ 2015.07</p>
+						<p>2015.04 ~ 2015.07</p>
 					</div>
 					<div class="myprojectinfo">
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;基于Node.js视频爬虫开发。</p>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;个人工作：分析各个视频网站的前端页面结构和模板，通过网络请求、HTML标签匹配、正则过滤等，实现各网站的频数据的属性获取和存储。</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;为学生提供课程介绍、教学公告和课件下载等服务。实现前端页面和交互，搭建管理后台，实现课程添加、课程信息编辑和文件上传等功能。</p>
 					</div>
 				</div>
 				<div class="myproject">
@@ -105,7 +104,7 @@
 		</div>
 		<div id="page5" class="page page_project">
 			<div class="pagecontent">
-				<h1>项目经历</h1>
+				<h1>项目经历 二</h1>
 				<div class="myproject">
 					<div class="myprojecttitle">
 						<h3>三维模型绘制软件</h3>
@@ -145,16 +144,17 @@
 		<div id="page6" class="page page_internship">
 			<div class="pagecontent">
 				<h1>实习经历</h1>
-								<div class="myproject">
+				<div id="myinternship">
+				<div class="myproject">
 					<div class="myprojecttitle">
 						<h3>阿里UC--Web工程师</h3>
 					</div>
 					<div class="myprojecttime">
-						<p>2015.05 ~ 2015.07</p>
+						<p>2015.04 ~ 2015.07</p>
 					</div>
 					<div class="myprojectinfo">
 						<p>&nbsp;&nbsp;&nbsp;&nbsp;基于Node.js的视频网站爬虫开发。</p>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;分析各视频网站的前端页面结构和模板，通过路由匹配、HTML标签匹配、正则过滤等，实现各网站的频数据的属性获取和存储。开发网址后缀匹配模块。</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;分析各视频网站的前端页面结构和模板，通过路由匹配、HTML标签匹配、正则过滤等，实现约50个网站的视频数据爬取和存储；并开发网址后缀匹配模块。</p>
 					</div>
 				</div>
 				<div class="myproject">
@@ -165,8 +165,8 @@
 						<p>2015.07 ~ 2015.09</p>
 					</div>
 					<div class="myprojectinfo">
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;参与大数据项目前端页面开发。</p>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;实现页面语言切换、基于Chart.js的数据图形化、时间选择器插件、页面弹出框管理插件、下拉列表控制插件。基于React的复杂页面刷新。</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;独立承担某一大数据项目的前端页面开发。</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;实现页面语言切换、时间选择器插件、页面弹出框管理插件、下拉列表控制插件、基于Cookie的搜索历史纪录提示、基于Chart.js的数据图形化、基于React的复杂页面刷新等。</p>
 					</div>
 				</div>
 				<div class="myproject">
@@ -178,9 +178,10 @@
 					</div>
 					<div class="myprojectinfo">
 						<p>&nbsp;&nbsp;&nbsp;&nbsp;Android手机电脑鼠标App和iOS玩具车遥控App开发</p>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;使用Android手机重力感应操控电脑玩“极品飞车”，实现手机与电脑通过UDP广播自动连接。开发iphone遥控实体玩具车App，包括二维码识别、网络通讯和Cocos-2D动画。</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;使用Android手机触屏位置作为电脑鼠标；重力感应操控电脑玩“极品飞车”，实现手机与电脑通过UDP广播自动连接。开发iphone遥控实体玩具车App，包括二维码识别和Cocos-2D动画等。</p>
 					</div>
-				</div>
+					</div>
+									</div>
 			</div>
 		</div>
 		<div id="page7" class="page page_application">
@@ -204,9 +205,9 @@
 				</div>
 				<div id="commingsoon">
 				<p>
-				成长中&nbsp;:&nbsp;<a href="https://github.com/CntChen" target="_blank"><strong>Github</strong></a> | 
-				<a href="http://cntchen.github.io/" target="_blank"><strong>Blog</strong></a> | 
-				<a href="http://www.zhihu.com/people/cnt-chen" target="_blank"><strong>知乎</strong></a>
+				成长中&nbsp;:&nbsp;<a href="javascript:console.log('Github: https://github.com/CntChen');" target="_blank"><strong>Github</strong></a> |
+				<a href="javascript:console.log('Blog: http://cntchen.github.io/');" target="_blank"><strong>Blog</strong></a> | 
+				<a href="javascript:console.log('Zhihu: http://www.zhihu.com/people/cnt-chen');" target="_blank"><strong>知乎</strong></a>
 				</p>
 				</div>
 			</div>
@@ -217,6 +218,6 @@
 		<div id="arrowdown"></div>
 	</div>
 	<script type="text/javascript" src="./js/util.js"></script>
-	<script type="text/javascript" src="./js/resume.js"></script>
+	<script type="text/javascript" src="./js/myresume.js"></script>
 </body>
 </html>

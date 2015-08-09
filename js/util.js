@@ -8,17 +8,37 @@ var Util = Util || {};
 		return (' ' + el.className + ' ').indexOf(' ' + cn + ' ') !== -1;
 	}
 
-	function addClass(el, cn) {
+	function _addClass(el, cn) {
 		if (!hasClass(el, cn)) {
 			el.className = (el.className === '') ? cn : el.className + ' ' + cn;
 		}
 	}
 
-	function removeClass(el, cn) {
+	function addClass(doms, cn){
+		if (!doms.length) {
+			doms = [doms];
+		}
+		var length = doms.length;
+		for (var i = 0; i < length; i++) {
+			_addClass(doms[i], cn);
+		}
+	}
+
+	function _removeClass(el, cn) {
 		el.className = trim((' ' + el.className + ' ').replace(' ' + cn + ' ', ' '));
 	}
 
-	function addEvent(el, e, callback, capture) {
+	function removeClass(doms, cn){
+		if (!doms.length) {
+			doms = [doms];
+		}
+		var length = doms.length;
+		for (var i = 0; i < length; i++) {
+			_removeClass(doms[i], cn);
+		}
+	}
+
+	function _addEvent(el, e, callback, capture) {
 		if (!!window.addEventListener) {
 			el.addEventListener(e, callback, !!capture);
 		} else {
@@ -26,11 +46,31 @@ var Util = Util || {};
 		}
 	}
 
-	function removeEvent(el, e, callback, capture) {
+	function addEvent(doms, e, callback, capture) {
+		if (!doms.length) {
+			doms = [doms];
+		}
+		var length = doms.length;
+		for (var i = 0; i < length; i++) {
+			_addEvent(doms[i], e, callback, capture);
+		}
+	}
+
+	function _removeEvent(el, e, callback, capture) {
 		if (!!window.addEventListener) {
 			el.removeEventListener(e, callback, !!capture);
 		} else {
 			el.detachEvent('on' + e, callback);
+		}
+	}
+
+	function removeEvent(doms, e, callback, capture) {
+		if (!doms.length) {
+			doms = [doms];
+		}
+		var length = doms.length;
+		for (var i = 0; i < length; i++) {
+			_removeEvent(doms[i], e, callback, capture);
 		}
 	}
 
