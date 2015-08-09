@@ -44,7 +44,7 @@ var MyResume = MyResume || {};
     Util.removeClass(lis, 'selected');
 
     var pageName = '';
-    for(var key in self.pageStartIndex){
+    for (var key in self.pageStartIndex) {
       var pageIndex = self.pageStartIndex[key];
       if (pageIndex >= pageNow) {
         pageName = key;
@@ -58,7 +58,7 @@ var MyResume = MyResume || {};
 
     // page popup animation
     Util.addClass(self.pagesDom[pageNow - 1].getElementsByClassName('pagecontent'), 'a-zoomin a-duration1s');
-    
+
     // init page with animation
     var initPageFunc = 'try{initPage_' + self.pagesDom[pageNow - 1].className.replace(/page\spage_/, '').replace(/\b\w/, function(str) {
       return str.toUpperCase();
@@ -105,31 +105,31 @@ var MyResume = MyResume || {};
   }
 
   function li_ClickHandler() {
-    var pageIndex = self.pageStartIndex[this.getElementsByTagName('span')[0].innerHTML.toLowerCase()];    
-    gotoPage(pageIndex);  
+    var pageIndex = self.pageStartIndex[this.getElementsByTagName('span')[0].innerHTML.toLowerCase()];
+    gotoPage(pageIndex);
   }
 
-  var TouchEventForSlide = (function (){
+  var TouchEventForSlide = (function() {
     var startX,
-        startY,
-        endX,
-        endY,
-        nowX,
-        nowY;
+      startY,
+      endX,
+      endY,
+      nowX,
+      nowY;
 
-    function isSlide(){
-      if(Math.abs(endY - startY) > 100){
+    function isSlide() {
+      if (Math.abs(endY - startY) > 100) {
         return true;
       }
       return false;
     }
 
-    function slidePage(){
+    function slidePage() {
       if (endY > startY) {
-        pageDown();
+        pageUp();
       }
       if (endY < startY) {
-        pageUp();
+        pageDown();
       }
     }
 
@@ -137,7 +137,7 @@ var MyResume = MyResume || {};
       event = event || window.event;
       startX = event.changedTouches[0].pageX;
       startY = event.changedTouches[0].pageY;
-    } 
+    }
 
     function touchEnd(event) {
       event = event || window.event;
@@ -145,13 +145,13 @@ var MyResume = MyResume || {};
       endY = event.changedTouches[0].pageY;
 
       isSlide() && slidePage();
-    } 
+    }
 
     function touchMove(event) {
       event = event || window.event;
       nowX = event.changedTouches[0].pageX;
       nowY = event.changedTouches[0].pageY;
-    } 
+    }
 
     return {
       touchStart: touchStart,
@@ -200,7 +200,7 @@ var MyResume = MyResume || {};
     }, 1500);
   }
 
-  function initPage_Skill(){
+  function initPage_Skill() {
     var skillTree = document.getElementById('skilltree');
     var expertSkills = skillTree.getElementsByClassName('expert');
     var familiarSkills = skillTree.getElementsByClassName('familiar');
@@ -211,8 +211,8 @@ var MyResume = MyResume || {};
     Util.addClass(justknowSkills, 'hidden');
 
     setTimeout(function() {
-    Util.removeClass(expertSkills, 'hidden');
-    Util.addClass(expertSkills, 'a-zoomin a-duration1s');
+      Util.removeClass(expertSkills, 'hidden');
+      Util.addClass(expertSkills, 'a-zoomin a-duration1s');
     }, 1000);
     setTimeout(function() {
       Util.removeClass(familiarSkills, 'hidden');

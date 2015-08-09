@@ -1,6 +1,6 @@
-# My Resume For Front-end Job ##
+# My CV For Front-end Job ##
 
-### Please click **[MyResume][MyResume]** ###
+### Please click **[My CV][CV]** ###
 
 
-[MyResume]:http://cntchen.github.io/MyResume/
+[CV]:http://cntchen.github.io/cv/
