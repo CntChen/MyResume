@@ -70,15 +70,21 @@ var MyResume = MyResume || {};
     Util.addEvent(document.getElementById('arrowdown'), 'click', pageDown, false);
     Util.addEvent(document.getElementById('arrowup'), 'click', pageUp, false);
 
-    Util.addEvent(document, 'mousewheel', slidePageHandler, false);
+    Util.addEvent(document, 'mousewheel', wheelPageHandler, false);
     Util.addEvent(document, 'keydown', keyPressHandler, false);
 
     var lis = document.getElementById('pagenavigation').getElementsByTagName('li');
     Util.addEvent(lis, 'click', li_ClickHandler, false);
+
+    // for slide
+    Util.addEvent(document, 'touchstart', TouchEventForSlide.touchStart, false);
+    Util.addEvent(document, 'touchend', TouchEventForSlide.touchEnd, false);
+    Util.addEvent(document, 'touchmove', TouchEventForSlide.touchMove, false);
   }
 
-  function slidePageHandler(event) {
+  function wheelPageHandler(event) {
     event = event || window.event;
+    console.log(event);
     if (event.wheelDeltaY < 0 || event.wheelDelta < 0) {
       pageDown();
     }
@@ -102,6 +108,57 @@ var MyResume = MyResume || {};
     var pageIndex = self.pageStartIndex[this.getElementsByTagName('span')[0].innerHTML.toLowerCase()];    
     gotoPage(pageIndex);  
   }
+
+  var TouchEventForSlide = (function (){
+    var startX,
+        startY,
+        endX,
+        endY,
+        nowX,
+        nowY;
+
+    function isSlide(){
+      if(Math.abs(endY - startY) > 100){
+        return true;
+      }
+      return false;
+    }
+
+    function slidePage(){
+      if (endY > startY) {
+        pageDown();
+      }
+      if (endY < startY) {
+        pageUp();
+      }
+    }
+
+    function touchStart(event) {
+      event = event || window.event;
+      startX = event.changedTouches[0].pageX;
+      startY = event.changedTouches[0].pageY;
+    } 
+
+    function touchEnd(event) {
+      event = event || window.event;
+      endX = event.changedTouches[0].pageX;
+      endY = event.changedTouches[0].pageY;
+
+      isSlide() && slidePage();
+    } 
+
+    function touchMove(event) {
+      event = event || window.event;
+      nowX = event.changedTouches[0].pageX;
+      nowY = event.changedTouches[0].pageY;
+    } 
+
+    return {
+      touchStart: touchStart,
+      touchEnd: touchEnd,
+      touchMove: touchMove
+    }
+  })();
 
   function pageDown() {
     gotoPage(getPageNow() + 1);
