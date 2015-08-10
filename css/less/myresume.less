@@ -214,6 +214,7 @@
 	background-color: rgba(25, 181, 254, 0.2);
 }
 
+
 .myproject{
 	@project-width: 256px;
 	@project-height: 300px;
@@ -234,22 +235,25 @@
 		border-bottom-left-radius: 10px;
 		border-bottom-right-radius: 10px;
 	}
+
 	&title{
 		font-size: 25px;
 		padding:0px 5px 0px;
 		height: 40px;
 		line-height: 40px;
 		text-align: center;
+		display: inline-block;
 	}
 	&time{
 		font-size: 20px;
 		color: #aee2d9;
 		padding: 0px 10px;
-		height: 30px;
+		height: 40px;
 		line-height: 30px;
 		border-top: 1px #aaa dashed;
 		border-bottom: 1px #aaa dashed;
 		text-align: center;
+		display: inline-block;
 	}
 	&info{
 		padding: 0px 10px;
@@ -261,6 +265,48 @@
 			margin: 5px 0px;
 			font-weight: 100;
 		}
+	}
+}
+
+
+.myintern{
+	@project-width: 420px;
+	@project-height: 80px;
+
+	width: @project-width;
+	height: @project-height;
+	margin: 0 auto;
+	margin-top: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 6px 1px #fff;
+	text-align: left;
+	&title{
+		font-size: 25px;
+		height: 40px;
+		line-height: 40px;
+		padding: 0px 0px 0px 10px; 
+		display: inline-block;
+	}
+
+	&time{
+		font-size: 20px;
+		color: #aee2d9;
+		height: 40px;
+		line-height: 40px;
+		padding: 0px 15px 0px 0px; 
+		display: inline-block;
+		float: right;
+		clear: both;
+	}
+
+	&info{
+		display: block;
+		height: 40px;
+		line-height: 40px;
+		font-size: 18px;
+		text-align: justify;
+		font-weight: 100;
+		text-align: center;
 	}
 }
 

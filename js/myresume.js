@@ -226,7 +226,7 @@ var MyResume = MyResume || {};
 
   function initPage_Internship() {
     var myInternship = document.getElementById('myinternship');
-    var myProject = myInternship.getElementsByClassName('myproject');
+    var myProject = myInternship.getElementsByClassName('myintern');
 
     Util.addClass(myProject, 'hidden');
 
