@@ -1,5 +1,5 @@
 @footer-padding-bottom: 20px;
-@pagecontent-padding-top: 120px;
+@pagecontent-padding-top: -120px;
 
 #maincontain {
 	position: absolute;
@@ -65,9 +65,8 @@
 
 .pagecontent {
 	width: 100%;
-	height: 100%;
-	top: 50%;
-	padding-top: @pagecontent-padding-top;
+	top: calc(~"50% + @{pagecontent-padding-top}");
+	position: relative;
 }
 
 #footer {
