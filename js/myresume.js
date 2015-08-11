@@ -233,13 +233,13 @@ var MyResume = MyResume || {};
     setTimeout(function() {
       Util.removeClass(myProject[0], 'hidden');
       Util.addClass(myProject[0], 'a-sildeup a-duration1s');
-    }, 1000);
+    }, 800);
     for (var i = 1; i < myProject.length; i++) {
       (function(i) {
         setTimeout(function() {
           Util.removeClass(myProject[i], 'hidden');
           Util.addClass(myProject[i], 'a-sildeup a-duration1s');
-        }, 1000 + 800 * i);
+        }, 800 + 800 * i);
       })(i);
     }
   }

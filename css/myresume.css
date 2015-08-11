@@ -7,6 +7,7 @@
 .page {
   width: 100%;
   height: 100%;
+  position: relative;
   text-align: center;
 }
 .page_introduction {
@@ -58,9 +59,11 @@
   color: #fff;
 }
 .pagecontent {
+  position: relative;
   width: 100%;
   height: 100%;
-  padding-top: 120px;
+  top: 50%;
+  padding-top: -120px;
 }
 #footer {
   position: absolute;
@@ -194,8 +197,8 @@
 .myproject {
   margin: 20px 20px;
   display: inline-block;
-  width: 256px;
-  height: 300px;
+  width: 240px;
+  height: 100px;
   border-radius: 10px;
   vertical-align: top;
   box-shadow: 0px 0px 6px 1px #fff;
@@ -216,20 +219,9 @@
   text-align: center;
   display: inline-block;
 }
-.myprojecttime {
-  font-size: 20px;
-  color: #aee2d9;
-  padding: 0px 10px;
-  height: 40px;
-  line-height: 30px;
-  border-top: 1px #aaa dashed;
-  border-bottom: 1px #aaa dashed;
-  text-align: center;
-  display: inline-block;
-}
 .myprojectinfo {
   padding: 0px 10px;
-  height: 240px;
+  height: 100px;
 }
 .myprojectinfo p {
   font-size: 18px;
