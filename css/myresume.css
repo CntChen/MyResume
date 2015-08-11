@@ -60,7 +60,8 @@
 }
 .pagecontent {
   width: 100%;
-  top: calc(50% - 200px);
+  top: calc(50% - 200px) !important;
+  top: 30%;
   position: relative;
 }
 #footer {
