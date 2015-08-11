@@ -80,11 +80,11 @@ var MyResume = MyResume || {};
     Util.addEvent(document, 'touchstart', TouchEventForSlide.touchStart, false);
     Util.addEvent(document, 'touchend', TouchEventForSlide.touchEnd, false);
     Util.addEvent(document, 'touchmove', TouchEventForSlide.touchMove, false);
+    Util.addEvent(document, 'touchcancel', TouchEventForSlide.touchCancel, false);
   }
 
   function wheelPageHandler(event) {
     event = event || window.event;
-    console.log(event);
     if (event.wheelDeltaY < 0 || event.wheelDelta < 0) {
       pageDown();
     }
@@ -135,12 +135,15 @@ var MyResume = MyResume || {};
 
     function touchStart(event) {
       event = event || window.event;
+      console.log('touchStart', event);
       startX = event.changedTouches[0].pageX;
       startY = event.changedTouches[0].pageY;
+      event.preventDefault();
     }
 
     function touchEnd(event) {
       event = event || window.event;
+      console.log('touchEnd', event);
       endX = event.changedTouches[0].pageX;
       endY = event.changedTouches[0].pageY;
 
@@ -149,14 +152,25 @@ var MyResume = MyResume || {};
 
     function touchMove(event) {
       event = event || window.event;
+      console.log('touchMove', event);
       nowX = event.changedTouches[0].pageX;
       nowY = event.changedTouches[0].pageY;
+    }
+
+    function touchCancel(event){
+      event = event || window.event;
+      console.log('touchCancel', event);
+      endX = event.changedTouches[0].pageX;
+      endY = event.changedTouches[0].pageY;
+
+      isSlide() && slidePage();
     }
 
     return {
       touchStart: touchStart,
       touchEnd: touchEnd,
-      touchMove: touchMove
+      touchMove: touchMove,
+      touchCancel: touchCancel
     }
   })();
 
