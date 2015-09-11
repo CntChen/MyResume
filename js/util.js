@@ -39,7 +39,7 @@ var Util = Util || {};
   }
 
   function _addEvent(el, e, callback, capture) {
-    if (!!window.addEventListener) {
+    if (!!el.addEventListener) {
       el.addEventListener(e, callback, !!capture);
     } else {
       el.attachEvent('on' + e, callback);
@@ -57,7 +57,7 @@ var Util = Util || {};
   }
 
   function _removeEvent(el, e, callback, capture) {
-    if (!!window.addEventListener) {
+    if (!!el.addEventListener) {
       el.removeEventListener(e, callback, !!capture);
     } else {
       el.detachEvent('on' + e, callback);
